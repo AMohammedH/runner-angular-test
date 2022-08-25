@@ -263,6 +263,16 @@ svg#clouds {
   width: 1920px;
 }
 
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
   .card-container > *:not(.circle-link) ,
@@ -284,6 +294,7 @@ svg#clouds {
     transform: rotate(-5deg);
   }
 }
+
 
 @media screen and (max-width: 575px) {
   svg#rocket-smoke {

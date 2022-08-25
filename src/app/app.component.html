@@ -6,7 +6,7 @@
     src="assets/runner_logo.png"
   />
   <span>{{ pageTitle }}</span>
-    <div class="spacer"></div>
+  <div class="spacer"></div>
 </div>
 
 <div class="content" role="main">
@@ -16,4 +16,18 @@
   <ul>
     <li *ngFor="let step of requirements">{{step}}</li>
   </ul>
+  <form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Search by name</mat-label>
+      <input type="text" placeholder="Please Enter Name" aria-label="Please Enter Name" matInput [formControl]="myControl"
+        [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option"
+          (onSelectionChange)="onSelect(option)">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <mat-card>{{getFullName}}</mat-card>
 </div>
